@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tracker map test 2</title>
+</head>
+<body style="word-wrap: break-word;">
+    
+    <style type="text/css">
+       #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <textarea id="log"></textarea>
+    <button id="getdevicesList" onclick="getAllDevices()">Get All Devices</button>
+    <select id="devicesList" >
+        <option disabled>Выберите устройство</option>
+    </select>
+    <input type="checkbox" id="subscribeTo" name="feature" value="scales" unchecked onclick="subscribeOrUnsubscribe()" />
+    <label for="subscribeTo">Обновлять автоматически?</label>
+    <button id="getdevicesList" onclick="getPathFromDatabase()">Show device route</button>
+    <button id="getZones" onclick="getZones()">Get Zones</button>
+    <button id="sendMessage" onclick="sendMessage()">Send Message</button>
+    <button id="getDates" onclick="getDates()">Get Dates</button>
+    <select id="dateListFrom" >
+        <option disabled>Выберите дату от</option>
+    </select>
+    <select id="dateListTo" >
+        <option disabled>Выберите дату до</option>
+    </select>
+    <button id="showSelectedRoute" onclick="showSelectedRoute()">Show selected route</button>
+    <button id="clearSelectedRoute" onclick="clearSelectedRoute()">Clear selected route</button></p>
+    <label>Выберите дату</label>
+    <input id="datetimePick" type="date">
+    <label>Время начала (час)</label>
+    <input id="timeFrom" type="range" min="0" max="24" step="1" value="0" onchange="updateTextInput(this.value)"> 
+    <label id="textInput">0</label>
+    <label>Время окончания (час)</label>
+    <input id="timeTo" type="range" min="0" max="24" step="1" value="0" onchange="updateTextInput2(this.value)"> 
+    <label id="textInput2">0</label>
+    <button id="showSelectedRoute2" onclick="showSelectedRoute2()">Показать маршрут</button>
+    <button id="adminmode" onclick="adminsmode()">admin mode</button>
+    </br>
+    <div id="map" allowfullscreen="true">
+
+
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.17/js/adal.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLR6H0rBsiWE69WoeQWLz1PwLglVjpFLI&libraries=drawing"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+
+    
+
+    <script src="./page.js"></script>
+    <script src="./appinsight.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="./socket.js"></script>
+    <script src="./visual.js"></script>
+        
+</body>
+</html>

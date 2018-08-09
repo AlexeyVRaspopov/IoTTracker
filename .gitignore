@@ -1,0 +1,4 @@
+node_modules
+.dockerignore
+src/config.js
+/src/config.js
